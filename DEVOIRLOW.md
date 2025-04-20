@@ -1,3 +1,8 @@
+> **NOM :** Khedim
+> **PRENOM :** Youcef
+> **GROUP:** 5
+
+
 ### XSLT Template, `apply-templates`, and `call-template` - A Summary
 
 1. **Template (`<xsl:template>`):**
@@ -54,7 +59,6 @@
 </xsl:template>
 
 
- 
 ### XSLT Template, `apply-templates`, and `call-template` - Using the exercice number 3 in the technical sheet 5 (TD5)
 
 1. **Template (`<xsl:template>`):**
@@ -129,9 +133,7 @@
 </xsl:template>
 ```
 This is a recursive template function that calculates the total coefficient of all `<matiere>` nodes passed in as a parameter.
-
 ---
-
 
 ### XSLT Basic Functions with Examples
 
@@ -148,7 +150,6 @@ This is a recursive template function that calculates the total coefficient of a
      <xsl:value-of select="person/name"/>
      ```
      **Result:** `John`
-
 2. **Generation of Content**
    - **Function:** Generates new content in the output that doesn't exist in the original XML.
    - **Example:**
@@ -161,7 +162,6 @@ This is a recursive template function that calculates the total coefficient of a
      ```xml
      <message>Hello, John!</message>
      ```
-
 3. **Deletion of Content**
    - **Function:** Removes elements from the output by not including them in the template.
    - **Example:**
@@ -190,7 +190,6 @@ This is a recursive template function that calculates the total coefficient of a
      ```xml
      <full-name>John</full-name>
      ```
-
 5. **Duplication of Content**
    - **Function:** Outputs the same content multiple times.
    - **Example:**
@@ -223,7 +222,6 @@ This is a recursive template function that calculates the total coefficient of a
      </xsl:for-each>
      ```
      **Result:** `John`
-
 7. **Sorting of Data**
    - **Function:** Sorts data in ascending or descending order.
    - **Example:**
@@ -246,11 +244,7 @@ This is a recursive template function that calculates the total coefficient of a
      </xsl:for-each>
      ```
      **Result:** `JaneJohn`
-
 8. **Other Functions (Etc.)**
    - **Conditional Processing:** Use of `<xsl:if>`, `<xsl:choose>`, etc.
    - **Template Reuse and Inheritance:** Using `<xsl:apply-templates>` and named templates.
    - **Variables and Parameters:** Use of `<xsl:variable>` and `<xsl:param>`.
-   - **Namespace Handling:** Working with multiple XML namespaces.
-
-Each of these features makes XSLT a powerful tool for transforming XML documents.
