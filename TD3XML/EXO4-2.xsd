@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:element name="facture">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vendeur" type="PartyType"/>
+                <xs:element name="acheteur" type="PartyType"/>
+                <xs:element name="mode_paiement" type="PaymentType"/>
+                <xs:element name="date_etablissement" type="xs:date"/>
+                <xs:element name="numero_facture" type="xs:string"/>
+                <xs:element name="details" type="DetailsType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="PartyType">
+        <xs:sequence>
+            <xs:element name="identite">
+                <xs:complexType>
+                    <xs:choice>
+                        <xs:element name="nom_prenom" type="xs:string"/>
+                        <xs:element name="raison_sociale" type="xs:string"/>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="forme_juridique" type="xs:string"/>
+            <xs:element name="siege_social" type="AddressType"/>
+            <xs:element name="capital_social" type="xs:decimal" minOccurs="0"/>
+            <xs:element name="coordonnees_fiscales" type="FiscalType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="AddressType">
+        <xs:sequence>
+            <xs:element name="adresse" type="xs:string"/>
+            <xs:element name="commune_wilaya" type="xs:string"/>
+            <xs:element name="code_postal" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="telephone" type="xs:string"/>
+            <xs:element name="fax" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="FiscalType">
+        <xs:sequence>
+            <xs:element name="RC" type="xs:string"/>
+            <xs:element name="AI" type="xs:string"/>
+            <xs:element name="NIF" type="xs:string"/>
+            <xs:element name="NIS" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="PaymentType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Chèque"/>
+            <xs:enumeration value="Liquidité"/>
+            <xs:enumeration value="Virement"/>
+            <xs:enumeration value="Versement Bancaire"/>
+            <xs:enumeration value="À terme"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="DetailsType">
+        <xs:sequence>
+            <xs:element name="produit" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="denomination" type="xs:string"/>
+                        <xs:element name="quantite" type="xs:integer"/>
+                        <xs:element name="prix_unitaire_HT" type="xs:decimal"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="prix_total_HT" type="xs:decimal"/>
+            <xs:element name="TVA" type="xs:decimal"/>
+            <xs:element name="prix_total_TTC">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="valeur_chiffres" type="xs:decimal"/>
+                        <xs:element name="valeur_lettres" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

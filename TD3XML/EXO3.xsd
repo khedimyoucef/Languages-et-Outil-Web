@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Bibliotheque">
+        <xs:complexType>
+        <!-- the library contains an unlimited sequence of book elements -->
+            <xs:sequence>
+                <xs:element name="Livre" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Titre" type="titreType"/>
+                            <xs:element name="Genre" type="GenreType" default="Scientifique"/>
+                            <!-- the default value can be set either inside the type definition or here-->
+                            <xs:element name="Langue" type="LangueType"/>
+                            <xs:element name="Prix" type="PrixType"/>
+                            <xs:element name="Resume" type="xs:string" minOccurs="0"/>
+                            <xs:element name="AnneePublication" type="AnneeType"/>
+                            <xs:element name="Chapitres" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Chapitre" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Titre" type="xs:string"/>
+                                                    <!-- the title is obligatory as minOccurs = maxOccurs = 1-->
+                                                    <xs:element name="SousTitre" type="xs:string" minOccurs="0"/>
+                                                    <!-- the subTitle is not obligatory minOccurs = 0-->
+                                                    <xs:element name="Pages" type="PagesType"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <!-- attribute in the book element-->
+                        <!-- the ISBN is an identifier therefore it is set as an attribute for better handling -->
+                        <xs:attribute name="ISBN" type="ISBNType" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="titreType">
+    <!-- only one subelement therefore can be a simpleType-->
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z] {3,100}"/>
+            <!-- [a-z]+ is equivalent to [a-z]{1,unbounded}-->
+            <!-- we can add a special caracter but only if it's after the interval : [a-z-] -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ISBNType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][0-9]{10}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="GenreType">
+        <xs:restriction base="xs:string">
+
+            <xs:enumeration value="Scientifique"/>
+            <xs:enumeration value="Roman"/>
+            <xs:enumeration value="Science-Fiction"/>
+            <xs:enumeration value="Histoire"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="LangueType">
+        <xs:restriction base="xs:string">
+            <!-- the language identidier is a string consisting of 2 letters only-->
+            <xs:pattern value="[a-z]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="PrixType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="10000"/>
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="AnneeType">
+        <xs:restriction base="xs:int">
+            <!-- setting an inclusive interval-->
+            <xs:minInclusive value="1800"/>
+            <xs:maxInclusive value="2025"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="PagesType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]+ à [0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gare SYSTEM "EXO1.dtd">
+<!-- or we can use <!DOCTYPE gare [gare.dtd code goes here]>   if the declaration of gare dtd is wanted to be internal--> 
+<gare>
+    <train numero="t5560" type="TGV">
+        <voiture numero="v1">
+            <reservation numero="r17" id="u55"/>
+            <reservation numero="r18" id="u52"/>
+        </voiture>
+        <voiture numero="v2"/>
+        <voiture numero="v3"/>
+        <voiture numero="v4">
+            <buvette service="froid uniquement"/>
+        </voiture>
+        <commentaire>Remplace l'ancien TGV <numero>t4215</numero></commentaire>
+    </train>
+    <train numero="t6731">
+        <voiture numero="v1"/>
+        <voiture numero="v2">
+            <reservation numero="r15" id="u55"/>
+        </voiture>s
+    <usager id="u52">
+        <prenom>Nihed</prenom>
+        <nom>Mecheref</nom>
+        <adresse>
+            <rue>Rue 5 Juillet</rue>
+            <code_postal>31000</code_postal>
+            <ville>Oran</ville>
+            <pays>Algérie</pays>
+        </adresse>
+        <telephones>
+            <telephone type="fixe"> +213 (0) 48 .. .. .. </telephone>
+            <telephone type="mobile"> +213 (0) 540 ... ... </telephone>
+        </telephones>
+        <emails>
+            <email type="personnel">mohammed.ali@gmail.com</email>
+            <email type="professionnel">m.ali@esi-sba.dz</email>
+        </emails>
+    </usager>
+    <usager id="u55">
+        <prenom>Mohamed</prenom>
+        <nom>Salmi</nom>
+        <!--suite declaration de l’usager u55… -->
+    </usager>
+</gare>

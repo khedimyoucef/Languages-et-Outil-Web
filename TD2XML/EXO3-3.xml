@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE entreprise SYSTEM "EXO3-3.dtd">
+<entreprise>
+    <personnes>
+        <personne id_personne="p1" projets_participes="pr1">
+            <nom>Omar</nom>
+            <informations>Omar's info</informations>
+        </personne>
+        <personne id_personne="p2" projets_participes="pr1 pr2">
+            <nom>Zohra</nom>
+            <informations>Zohra's info</informations>
+        </personne>
+        <personne id_personne="p3" projets_participes="pr2">
+            <nom>Mohamed</nom>
+            <informations>MOhamed's infos</informations>
+        </personne>
+    </personnes>
+    
+    <projets>
+        <projet id_projet="pr1" participants="p1 p2">
+            <nom>Traduction</nom>
+            <descriptif>Traduire certains elements de la documentation</descriptif>
+        </projet>
+        <projet id_projet="pr2" participants="p2 p3">
+            <nom>Construction de corpus</nom>
+            <descriptif>Rassembler et structurer toute la documentation</descriptif>
+        </projet>
+    </projets>
+</entreprise>

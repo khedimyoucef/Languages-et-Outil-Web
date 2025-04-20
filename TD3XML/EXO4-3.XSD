@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- using IDREFS-->
+    <!-- both elements and attributes can have user defined types-->
+    <xs:element name="entreprise">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="personnes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="personne" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nom" type="xs:string"/>
+                                        <xs:element name="info" type="xs:string"/>
+                                        <xs:element name="projets" type="xs:IDREFS"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="projets">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="projet" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nom" type="xs:string"/>
+                                        <xs:element name="descriptif" type="xs:string"/>
+                                        <xs:element name="participants" type="xs:IDREFS"/>
+                                        <!-- xs:IDREFS is a reserved xs simple type (predefined type) -->
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

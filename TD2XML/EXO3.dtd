@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT entreprise (personnes, projets)>
+    
+<!ELEMENT personnes (personne*)>
+<!ELEMENT personne (nom, informations, projets_participes)>
+<!-- projet_participes is an array of empty elements where each subelement projet_participe is an empty element consisting of a reference id attribute -->
+<!ATTLIST personne id_personne ID #REQUIRED>
+            
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT informations (#PCDATA)>
+<!ELEMENT projets_participes (projet_participe*)>
+<!ELEMENT projet_participe EMPTY>
+
+<!ATTLIST projet_participe id_projet IDREF #REQUIRED>
+<!-- id_projet is an IDREF that refrences to the project that the person participates in  -->    
+<!-- to keep track of the 1 person -> many projects relation -->
+<!ELEMENT projets (projet*)>
+<!ELEMENT projet (nom, descriptif, participants)>
+<!ATTLIST projet id_projet ID #REQUIRED>
+    
+<!ELEMENT descriptif (#PCDATA)>
+<!ELEMENT participants (participant+)>
+
+<!ELEMENT participant EMPTY>
+<!ATTLIST participant id_personne IDREF #REQUIRED>
+
+
+<!-- to keep track of the 1 project -> many persons relation -->

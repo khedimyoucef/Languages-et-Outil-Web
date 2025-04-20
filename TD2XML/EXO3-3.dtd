@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!ELEMENT entreprise (personnes, projets)>
+    
+<!ELEMENT personnes (personne*)>
+<!ELEMENT personne (nom, informations)>
+<!ATTLIST personne id_personne ID #REQUIRED projets_participes IDREFS #IMPLIED>
+
+<!-- by using IDREFS we can directly specify the ids of the corresponding projects that the person contributed in using a list string attribute -->
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT informations (#PCDATA)>
+    
+<!ELEMENT projets (projet*)>
+<!ELEMENT projet (nom, descriptif)>
+<!ATTLIST projet id_projet ID #REQUIRED participants IDREFS #IMPLIED>
+
+<!ELEMENT descriptif (#PCDATA)>

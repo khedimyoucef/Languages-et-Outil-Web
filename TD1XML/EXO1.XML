@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Attention il y a des erreurs -->
+<!-- we must add a root element Persons -->
+<Persons>
+<Person number="1">
+    <Firstname>John</Firstname>
+    <Lastname>Smith</Lastname><!-- Must not conatin spaces-->
+    <Birthday>19650302</Birthday><!-- case sensitive-->
+    <Company>IBM</Company>
+    <Position>CEO</Position>
+    <Email>jsmith@ibm.com</Email>
+    <!-- here both addressses have the same identifier "Adress" but are of different type ,ok to use -->
+    <Address type="home">
+        <Company>
+        <Street>23 Main St</Street>
+        <City>Dublin</City>
+        <Postcode>22000</Postcode>
+        </Company>
+        <Country/><!-- self containing (balise autofermante)-->
+    </Address>
+    <Address type="work">
+        <Street>1234 High St</Street>
+        <City>Boston</City>
+        <Country>Ireland</Country>
+    </Address>
+</Person>
+<Person number="2"> <!-- only one attribute of the same name-->
+    <Firstname>Tom</Firstname>
+    <Lastname>Dunne</Lastname>
+    <Company>Today FM</Company>
+    <Position></Position>
+    <Email>tom.dunne@todayfm.com</Email>
+</Person>
+</Persons>

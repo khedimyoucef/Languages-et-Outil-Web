@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- we cannot link the same xml file to an xsd and a dtd file at the same time as they work differently for formatting-->
+    <xs:element name="gare">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="train" maxOccurs="unbounded"/>
+                <xs:element name="usager" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- WE can use an ID or define our own simple ttype based on a string and restricted to a certain regex ex : [a-z]+ [0-9] + -->
+
+    <xs:element name="train">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="voiture" maxOccurs="unbounded"/>
+                <xs:element name="commentaire" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="numero" type="xs:ID" use="required"/>
+            <xs:attribute name="type" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="voiture">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="1">
+                <xs:element name="reservation" maxOccurs="unbounded"/>
+                <xs:element name="buvette"/>
+            </xs:choice>
+            <xs:attribute name="numero" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="reservation">
+        <xs:complexType>
+            <xs:attribute name="numero" type="xs:ID" use="required"/>
+            <xs:attribute name="id" type="xs:IDREF" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="buvette">
+        <xs:complexType>
+            <xs:attribute name="service" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="commentaire">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="numero"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="numero" type="xs:string"/>
+
+    <xs:element name="usager">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="prenom"/>
+                <xs:element name="nom"/>
+                <xs:element name="adresse"/>
+                <xs:element name="telephones" minOccurs="0"/>
+                <xs:element name="emails" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="prenom" type="xs:string"/>
+    <xs:element name="nom" type="xs:string"/>
+
+    <xs:element name="adresse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="rue"/>
+                <xs:element name="code_postal"/>
+                <xs:element name="ville"/>
+                <xs:element name="pays"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="rue" type="xs:string"/>
+    <xs:element name="code_postal" type="xs:string"/>
+    <xs:element name="ville" type="xs:string"/>
+    <xs:element name="pays" type="xs:string"/>
+
+    <xs:element name="telephones">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="telephone" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="telephone">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="type" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="fixe"/>
+                                <xs:enumeration value="mobile"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                   </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="emails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="email" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="email">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="type" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="personnel"/>
+                                <xs:enumeration value="professionnel"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Menu>
+<Jours>
+
+<Jour name="dimanche">
+<Entree>salade verte</Entree>
+<Plat>
+<Viande>poulet</Viande>
+<Accompagnement>frittes</Accompagnement>
+</Plat>
+<Dessert>orange</Dessert>
+</Jour>
+
+<Jour name="Lundi">
+<Entree>pate</Entree>
+<Plat>
+<Viande>lapin</Viande>
+<Accompagnement>pates</Accompagnement>
+</Plat>
+<Dessert>tarte citron</Dessert>
+</Jour>
+
+<Jour name="mardi">
+<Entree>salade variee</Entree>
+<Plat>
+<Viande>poulet</Viande>
+<Accompagnement>frittes</Accompagnement>
+</Plat>
+<Dessert>banane</Dessert>
+</Jour>
+
+<Jour name="mercredi">
+<Entree>pirojki</Entree>
+<Plat>
+<Viande>poisson</Viande>
+<Accompagnement>riz</Accompagnement>
+</Plat>
+<Dessert>pomme</Dessert>
+</Jour>
+
+
+<Jour name="jeudi">
+<Entree>pizza</Entree>
+<Plat>
+<Viande>omelette</Viande>
+<Accompagnement>haricots verts</Accompagnement>
+</Plat>
+<Dessert>creme brule</Dessert>
+</Jour>
+
+<Jour name="vendredi">
+<Entree>taboule</Entree>
+<plat><PlatUnique>
+couscous
+</PlatUnique></plat>
+
+<Dessert>loukoums</Dessert>
+</Jour>
+
+<Jour name="samedi">
+<Entree>saladw verte</Entree>
+<Plat>
+<Viande>veau</Viande>
+<Accompagnement>courgette</Accompagnement>
+</Plat>
+<Dessert>banane</Dessert>
+</Jour>
+</Jours>
+
+
+</Menu>

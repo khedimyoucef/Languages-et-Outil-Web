@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!DOCTYPE CarnetAdresses [
+    <!-- Root element -->
+    <!ELEMENT CarnetAdresses (Personne*, Entreprise*)>
+
+    <!-- Person Information -->
+    <!ELEMENT Personne (Nom, Prenom, Adresse, TelephonePersonne?, EmailPersonne?, URLPersonne?)>
+    <!ATTLIST Personne person_id ID #REQUIRED>
+    <!-- to keep track of the persons in the company-->
+    <!ATTLIST Personne genre (homme | femme) #REQUIRED>
+
+    <!ELEMENT Nom (#PCDATA)>
+    <!ELEMENT Prenom (#PCDATA)>
+
+    <!ELEMENT Adresse (Rue, CodePostal, Ville, Pays)>
+    <!ELEMENT Rue (#PCDATA)>
+    <!ELEMENT CodePostal (#PCDATA)>
+    <!ELEMENT Ville (#PCDATA)>
+    <!ELEMENT Pays (#PCDATA)>
+
+    <!ELEMENT TelephonePersonne (Professionnel, Personnel?)>
+    <!ELEMENT Professionnel (#PCDATA)>
+    <!ELEMENT Personnel (#PCDATA)>  
+
+    <!ELEMENT EmailPersonne (Professionnel, Personnel?)>
+    <!ELEMENT URLPersonne (#PCDATA)>
+
+    <!ELEMENT Entreprise (Nom, Adresse, TelephoneEntreprise, EmailEntreprise, URLEntreprise, Workers)>
+    <!ATTLIST Entreprise contact IDREF #REQUIRED>
+    <!-- the contact is only one unique elemenet therefore it is better to use at as an attribute-->
+    <!ELEMENT TelephoneEntreprise (Fixe, Fax)>
+    <!ELEMENT Fixe (#PCDATA)>
+    <!ELEMENT Fax (#PCDATA)>
+
+    <!ELEMENT EmailEntreprise (#PCDATA)>
+    <!ELEMENT URLEntreprise (#PCDATA)>
+    <!-- XML/DTD is case sensitive -->
+    <!-- the use of IDRef and IDREFS requires at least an empty element (because they're attributes -->
+    
+
+    <!ELEMENT Workers EMPTY>
+    <!ATTLIST Workers workersRefs IDREFS #REQUIRED>
+]>
+
+<CarnetAdresses>
+    <!-- Person entries -->
+    <Personne genre="homme" person_id="p1">
+        <Nom>Benmohamed</Nom>
+        <Prenom>Ali</Prenom>
+        <Adresse>
+            <Rue>7 Rue Pasteur</Rue>
+            <CodePostal>22016</CodePostal>
+            <Ville>Sidi Bel Abbes</Ville>
+            <Pays>Algérie</Pays>
+        </Adresse>
+        <TelephonePersonne>
+            <Professionnel>+213 31 123456</Professionnel>
+            <Personnel>+213 555 987654</Personnel>
+        </TelephonePersonne>
+        <EmailPersonne>
+            <Professionnel>ali.benmohamed@entreprise.dz</Professionnel>
+            <Personnel>ali.bm@gmail.com</Personnel>
+        </EmailPersonne>
+        <URLPersonne>http://www.alibenmohamed.com</URLPersonne>
+    </Personne>
+
+    <Personne genre="femme" person_id="p2">
+        <Nom>Bensalem</Nom>
+        <Prenom>Sarah</Prenom>
+        <Adresse>
+            <Rue>12 Avenue des Roses</Rue>
+            <CodePostal>16000</CodePostal>
+            <Ville>Alger</Ville>
+            <Pays>Algérie</Pays>
+        </Adresse>
+        <TelephonePersonne>
+            <Professionnel>+213 21 654321</Professionnel>
+        </TelephonePersonne>
+        <EmailPersonne>
+            <Professionnel>sarah.bensalem@techdz.com</Professionnel>
+        </EmailPersonne>
+    </Personne>
+
+    <!-- Company entries -->
+    <Entreprise contact="p1">
+        <Nom>TechDZ</Nom>
+        <Adresse>
+            <Rue>45 Boulevard de l'Industrie</Rue>
+            <CodePostal>16010</CodePostal>
+            <Ville>Alger</Ville>
+            <Pays>Algérie</Pays>
+        </Adresse>
+        <TelephoneEntreprise>
+            <Fixe>+213 21 789012</Fixe>
+            <Fax>+213 21 789013</Fax>
+        </TelephoneEntreprise>
+        <EmailEntreprise>contact@techdz.com</EmailEntreprise>
+        <URLEntreprise>http://www.techdz.com</URLEntreprise>
+        
+
+        
+        <Workers workersRefs="p1 p2"/>
+
+            
+
+    </Entreprise>
+
+</CarnetAdresses>

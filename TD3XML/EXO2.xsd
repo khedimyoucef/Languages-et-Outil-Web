@@ -1,0 +1,123 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<!--elementFormDefault="qualified" has to do something with the namespace (to research for later)-->  
+    <!-- Root element -->
+    <xs:element name="conference">
+        <xs:complexType>
+        <!-- must follow this sequence-->
+            <xs:sequence>
+                <xs:element name="titre" type="TitreType"/>
+                <xs:element name="annee" type="AnneeType"/>
+                <xs:element name="lieu" type="xs:string"/>
+                <xs:element name="organisateur" type="xs:string"/>
+                <xs:element name="sessions" type="SessionsType"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Titre must be at most 80 characters -->
+    <xs:simpleType name="TitreType">
+        <!-- a simple type requires a base that is then applied a restriction -->
+        <!-- here the titreType is based on a string primitive type + a length restriction applied-->
+        <xs:restriction base="xs:string">
+            <!-- maxLength for a string max length and maxValue for an int maxValue-->
+            <xs:maxLength value="80"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Annee must be exactly 4 digits -->
+    <xs:simpleType name="AnneeType">
+        <xs:restriction base="xs:string">
+        <!-- we use a string base + a regex pattern-->
+            <xs:pattern value="\d{4}"/>
+            <!-- alternative -->
+            <!-- <xs:pattern value="[0-9]{4}"/> -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Sessions container -->
+    <xs:complexType name="SessionsType">
+        <xs:sequence>
+            <xs:element name="session" type="SessionType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Session element -->
+    <xs:complexType name="SessionType">
+        <xs:sequence>
+            <xs:element name="titre" type="TitreType"/>
+            <xs:element name="intervenant" type="IntervenantType"/>
+            <xs:element name="duree" type="DureeType"/>
+        </xs:sequence>
+        <xs:attribute name="type" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                <!-- this is equivalent to (Atelier|Presentation|TableRonde) in dtd but for the attribute-->
+                    <xs:enumeration value="Atelier"/>
+                    <xs:enumeration value="Presentation"/>
+                    <xs:enumeration value="TableRonde"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <!-- Intervenant element with email attribute -->
+    <xs:complexType name="IntervenantType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="email" type="EmailType" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Email pattern validation -->
+    <xs:simpleType name="EmailType">
+    <!-- only one subelement therefore can be a simpleType-->
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z]+(-[a-z]+)?\.[a-z]+(-[a-z]+)?@[a-z]+(-[a-z]+)?\.[a-z]{2,3}"/>
+
+            <!-- we can add a special caracter but only if it's after the interval : [a-z-] -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Duree element with unit attribute -->
+    <xs:complexType name="DureeType">
+        <xs:simpleContent>
+        <!-- simple content specifies that the complexType has only text and no child elements -->
+            <xs:extension base="xs:string">
+            <!-- extend the default string data type with dditional attributes like the name , default value ....-->
+                <xs:attribute name="unite" default="minutes">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="minutes"/>
+                            <xs:enumeration value="heures"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- equivalent form 
+
+    <xs:simpleType name="UniteType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="minutes"/>
+        <xs:enumeration value="heures"/>
+    </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="DureeType">
+    <xs:simpleContent>
+        <xs:extension base="xs:string">
+            <xs:attribute name="unite" type="UniteType" default="minutes"/>
+        </xs:extension>
+    </xs:simpleContent>
+    </xs:complexType>
+
+            -->
+
+
+
+
+</xs:schema>

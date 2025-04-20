@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<etablissements>
+    <universite>
+        <nom>Université de Sidi Bel Abbes</nom>
+        <annee_fondation>1978</annee_fondation>
+        <faculte>
+            <nom>Sciences Exactes</nom>
+            <doyen>Attouch Mohammed</doyen>
+            <departement>
+                <nom>Informatique</nom>
+                <chef_departement>Benali Youcef</chef_departement>
+                <enseignants>
+                    <enseignant id="ENS001" grade="MCA">
+                        <nom>Ammar</nom>
+                        <prenom>Réda</prenom>
+                        <date_naissance>1958-09-30</date_naissance>
+                        <specialite>Intelligence Artificielle</specialite>
+                        <enseignements>
+                            <matiere code="INF101" type="cours">
+                                <titre>Intelligence Artificielle avancée</titre>
+                                <credits>6</credits>
+                            </matiere>
+                            <matiere code="INF302" type="TP">
+                                <titre>Introduction à la programmation Python</titre>
+                                <credits>3</credits>
+                            </matiere>
+                        </enseignements>
+                    </enseignant>
+                    <!-- Autres enseignants -->
+                </enseignants>
+            </departement>
+            <!-- Autres départements -->
+        </faculte>
+        <!-- Autres facultés -->
+    </universite>
+    <!-- Autres etablissements -->
+</etablissements>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE Menu [
+
+    <!-- the tree is nested as follows : Menu -> Jours -> Jour     -->
+    <!ELEMENT Menu (Jours)>
+    
+    <!ELEMENT Jours (Jour+)>
+
+    <!-- we cannot define a certain interval for the number of subelements therfore we use Jour+ (atleast one subelement)-->
+    <!-- we can define an interval using xsd attributes (maxOccurs and minOccurs) -->
+    <!ELEMENT Jour (Entree, PLat, Dessert)>
+    <!ATTLIST Jour name CDATA #REQUIRED>
+
+    <!ELEMENT Entree (#PCDATA)>
+    <!ELEMENT PLat ((Viande, Accompagnement) |PlatUnique) >
+    
+    <!ELEMENT Viande (#PCDATA)>
+    <!ELEMENT Accompagnement (#PCDATA)>
+    <!ELEMENT PlatUnique (#PCDATA)>
+    
+    <!ELEMENT Dessert (#PCDATA)>
+]>
+
+
+
+<Menu>
+<Jours>
+
+<Jour name="dimanche">
+<Entree>salade verte</Entree>
+<PLat>
+<Viande>poulet</Viande>
+<Accompagnement>frittes</Accompagnement>
+</PLat>
+<Dessert>orange</Dessert>
+</Jour>
+
+<Jour name="Lundi">
+<Entree>pate</Entree>
+<PLat>
+<Viande>lapin</Viande>
+<Accompagnement>pates</Accompagnement>
+</PLat>
+<Dessert>tarte citron</Dessert>
+</Jour>
+
+<Jour name="mardi">
+<Entree>salade variee</Entree>
+<PLat>
+<Viande>poulet</Viande>
+<Accompagnement>frittes</Accompagnement>
+</PLat>
+<Dessert>banane</Dessert>
+</Jour>
+
+<Jour name="mercredi">
+<Entree>pirojki</Entree>
+<PLat>
+<Viande>poisson</Viande>
+<Accompagnement>riz</Accompagnement>
+</PLat>
+<Dessert>pomme</Dessert>
+</Jour>
+
+
+<Jour name="jeudi">
+<Entree>pizza</Entree>
+<PLat>
+<Viande>omelette</Viande>
+<Accompagnement>haricots verts</Accompagnement>
+</PLat>
+<Dessert>creme brule</Dessert>
+</Jour>
+
+<Jour name="vendredi">
+<Entree>taboule</Entree>
+<PLat><PlatUnique>
+couscous
+</PlatUnique></PLat>
+
+<Dessert>loukoums</Dessert>
+</Jour>
+
+<Jour name="samedi">
+<Entree>saladw verte</Entree>
+<PLat>
+<Viande>veau</Viande>
+<Accompagnement>courgette</Accompagnement>
+</PLat>
+<Dessert>banane</Dessert>
+</Jour>
+</Jours>
+
+
+</Menu>

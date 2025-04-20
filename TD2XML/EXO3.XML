@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE entreprise SYSTEM "EXO3.dtd">
+<entreprise>
+    <personnes>
+        <personne id_personne="p1">
+            <nom>Omar</nom>
+            <informations>omar's info</informations>
+            <projets_participes>
+                <projet_participe id_projet="pr1"/>
+            </projets_participes>
+        </personne>
+        <personne id_personne="p2">
+            <nom>Zohra</nom>
+            <informations>Zohra's info</informations>
+            <projets_participes>
+                <projet_participe id_projet="pr1"/>
+                <projet_participe id_projet="pr2"/>
+            </projets_participes>
+        </personne>
+        <personne id_personne="p3">
+            <nom>Mohamed</nom>
+            <informations>Mohamed's info</informations>
+            <projets_participes>
+                <projet_participe id_projet="pr2"/>
+            </projets_participes>
+        </personne>
+    </personnes>
+
+    <projets>
+        <projet id_projet="pr1">
+            <nom>Traduction</nom>
+            <descriptif>Traduire certains elements de la documentation</descriptif>
+            <participants>
+                <participant id_personne="p1"/>
+                <participant id_personne="p2"/>
+            </participants>
+        </projet>
+        <projet id_projet="pr2">
+            <nom>Construction de corpus</nom>
+            <descriptif>Rassembler et structurer toute la documentation</descriptif>
+            <participants>
+                <participant id_personne="p2"/>
+                <participant id_personne="p3"/>
+            </participants>
+        </projet>
+    </projets>
+</entreprise>

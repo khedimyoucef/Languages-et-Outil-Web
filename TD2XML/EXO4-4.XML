@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE Eleve [
+    <!-- Root element -->
+    <!ELEMENT Eleve (Nom, Prenom, Naissance, Section, Groupe, Adresse, Notes)>
+    <!ATTLIST Eleve matricule ID #REQUIRED>
+    <!-- Elements and subelements are by default required if we don't specify (?) -->
+    <!-- Personal Information -->
+    <!ELEMENT Nom (#PCDATA)>
+    <!ELEMENT Prenom (#PCDATA)>
+    
+    <!ELEMENT Naissance (Date, Lieu)>
+    <!ELEMENT Date (#PCDATA)>
+    <!ELEMENT Lieu (#PCDATA)>
+
+    <!ELEMENT Section (#PCDATA)>
+    <!ELEMENT Groupe (#PCDATA)>
+    <!ELEMENT Adresse (#PCDATA)>
+
+    <!-- Notes -->
+    <!ELEMENT Notes (Trimestre+)>
+
+    <!ELEMENT Trimestre (Francais, Histoire, Math, Physique, Dessin)>
+    <!ATTLIST Trimestre numero ID #REQUIRED>
+    <!-- a counter attribute (numero) to keep track of the Trimester (serves as an ID)-->
+
+    <!-- Subjects -->
+    <!ELEMENT Francais (#PCDATA)>
+    <!ELEMENT Histoire (#PCDATA)>
+    <!ELEMENT Math (#PCDATA)>
+    <!ELEMENT Physique (#PCDATA)>
+    <!ELEMENT Dessin (#PCDATA)>
+]>
+
+
+
+
+
+<!-- NOTE:  Use Attributes When The data is simple, fixed, and serves as metadata -->
+<!-- NOTE: Use Elements When The data may evolve, contain additional information, or fit naturally in a hierarchy-->
+<Eleve matricule="E01">
+    <Nom>Benmohamed</Nom>
+    <Prenom>Ali</Prenom>
+    <Naissance>
+        <Date>2004-12-13</Date>
+        <Lieu>Constantine</Lieu>
+    </Naissance>
+    <Section>A</Section>
+    <Groupe>08</Groupe>
+    <Adresse>7 Rue Pasteur, 22016, Sidi Bel Abbes</Adresse>
+
+    <Notes>
+        <Trimestre numero="t1">
+            <Francais>12</Francais>
+            <Histoire>14</Histoire>
+            <Math>9</Math>
+            <Physique>6</Physique>
+            <Dessin>14</Dessin>
+        </Trimestre>
+        <Trimestre numero="t2">
+            <Francais>9</Francais>
+            <Histoire>17</Histoire>
+            <Math>7</Math>
+            <Physique>9</Physique>
+            <Dessin>12</Dessin>
+        </Trimestre>
+        <Trimestre numero="t3">
+            <Francais>6</Francais>
+            <Histoire>9</Histoire>
+            <Math>4</Math>
+            <Physique>6</Physique>
+            <Dessin>13</Dessin>
+        </Trimestre>
+    </Notes>
+</Eleve>

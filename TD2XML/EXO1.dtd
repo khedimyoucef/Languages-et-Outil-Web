@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- note : it is recomended to start with simpler types -->
+<!ELEMENT gare (train+,usager+) >
+<!-- at least one element at most unbounded -->
+
+
+<!ELEMENT train (voiture+, commentaire?)>
+<!--  ? specifies that the comment can occur either 0 or 1 times inside train -->
+<!ATTLIST train numero ID #REQUIRED>
+<!ATTLIST train type CDATA #IMPLIED>
+
+
+<!ELEMENT voiture (reservation* | buvette?)>
+<!ATTLIST voiture numero CDATA #REQUIRED>
+<!-- can't use ID since numero is of type string -->
+
+
+<!ELEMENT reservation EMPTY>
+<!-- EMPTY because the reservation element must not contain any child elements -->
+<!-- attributes must be declared separately -->
+<!ATTLIST reservation numero ID #REQUIRED>
+<!ATTLIST reservation id IDREF #REQUIRED>
+
+<!-- IDREF references to the usager that reserved it -->
+<!ELEMENT buvette EMPTY>
+<!ATTLIST buvette service CDATA #REQUIRED>
+
+
+<!ELEMENT commentaire (#PCDATA,numero)>
+<!ELEMENT numero (#PCDATA)>
+
+<!-- the comment contains simple text + numero sub element -->
+
+
+ 
+<!ELEMENT usager (prenom, nom, adresse, telephones?, emails?)>
+<!-- the list of phones and emails is not required -->
+<!ATTLIST usager id ID #REQUIRED>
+<!-- id attribute name and the ID is the type of attribute named id  -->
+    
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT nom (#PCDATA)>
+    
+<!ELEMENT adresse (rue, code_postal, ville, pays)>
+<!ELEMENT rue (#PCDATA)>
+<!ELEMENT code_postal (#PCDATA)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT pays (#PCDATA)>
+    
+<!ELEMENT telephones (telephone+)>
+<!ELEMENT telephone (#PCDATA)>
+<!-- can't use regular expressions (regex) to define the phone type hence the use of a string  -->
+<!ATTLIST telephone type (fixe | mobile) #REQUIRED>
+    
+<!ELEMENT emails (email+)>
+<!ELEMENT email (#PCDATA)>
+<!-- same thing as the phone-->
+<!ATTLIST email type (personnel | professionnel) #REQUIRED>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

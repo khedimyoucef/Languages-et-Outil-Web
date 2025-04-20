@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+
+<!-- NOTE:  Use Attributes When The data is simple, fixed, and serves as metadata -->
+<!-- NOTE: Use Elements When The data may evolve, contain additional information, or fit naturally in a hierarchy-->
+<Eleve matricule="E01">
+    <Nom>Benmohamed</Nom>
+    <Prenom>Ali</Prenom>
+    <Naissance>
+        <Date>2004-12-13</Date>
+        <Lieu>Constantine</Lieu>
+    </Naissance>
+    <Section>A</Section>
+    <Groupe>08</Groupe>
+    <Adresse>7 Rue Pasteur, 22016, Sidi Bel Abbes</Adresse>
+
+    <Notes>
+        <Trimestre numero="1">
+            <Francais>12</Francais>
+            <Histoire>14</Histoire>
+            <Math>9</Math>
+            <Physique>6</Physique>
+            <Dessin>14</Dessin>
+        </Trimestre>
+        <Trimestre numero="2">
+            <Francais>9</Francais>
+            <Histoire>17</Histoire>
+            <Math>7</Math>
+            <Physique>9</Physique>
+            <Dessin>12</Dessin>
+        </Trimestre>
+        <Trimestre numero="3">
+            <Francais>6</Francais>
+            <Histoire>9</Histoire>
+            <Math>4</Math>
+            <Physique>6</Physique>
+            <Dessin>13</Dessin>
+        </Trimestre>
+    </Notes>
+</Eleve>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<CarnetAdresses>
+    <!-- Person entries -->
+    <Personne genre="homme">
+        <Nom>Benmohamed</Nom>
+        <Prenom>Ali</Prenom>
+        <Adresse>
+            <Rue>7 Rue Pasteur</Rue>
+            <CodePostal>22016</CodePostal>
+            <Ville>Sidi Bel Abbes</Ville>
+            <Pays>Algérie</Pays>
+        </Adresse>
+        <Telephone>
+            <Professionnel>+213 31 123456</Professionnel>
+            <Personnel>+213 555 987654</Personnel>
+        </Telephone>
+        <Email>
+            <Professionnel>ali.benmohamed@entreprise.dz</Professionnel>
+            <Personnel>ali.bm@gmail.com</Personnel>
+        </Email>
+        <URL>http://www.alibenmohamed.com</URL>
+    </Personne>
+
+    <Personne genre="femme">
+        <Nom>Bensalem</Nom>
+        <Prenom>Sarah</Prenom>
+        <Adresse>
+            <Rue>12 Avenue des Roses</Rue>
+            <CodePostal>16000</CodePostal>
+            <Ville>Alger</Ville>
+            <Pays>Algérie</Pays>
+        </Adresse>
+        <Telephone>
+            <Professionnel>+213 21 654321</Professionnel>
+        </Telephone>
+        <Email>
+            <Professionnel>sarah.bensalem@techdz.com</Professionnel>
+        </Email>
+    </Personne>
+
+    <!-- Company entries -->
+    <Entreprise>
+        <Nom>TechDZ</Nom>
+        <Adresse>
+            <Rue>45 Boulevard de l'Industrie</Rue>
+            <CodePostal>16010</CodePostal>
+            <Ville>Alger</Ville>
+            <Pays>Algérie</Pays>
+        </Adresse>
+        <Telephone>
+            <Fixe>+213 21 789012</Fixe>
+            <Fax>+213 21 789013</Fax>
+        </Telephone>
+        <Email>contact@techdz.com</Email>
+        <URL>http://www.techdz.com</URL>
+        <Contact>
+            <Personne genre="femme">
+                <Nom>Bensalem</Nom>
+                <Prenom>Sarah</Prenom>
+            </Personne>
+        </Contact>
+        <Salaries>
+            <Personne genre="homme">
+                <Nom>Benmohamed</Nom>
+                <Prenom>Ali</Prenom>
+            </Personne>
+        </Salaries>
+    </Entreprise>
+
+</CarnetAdresses>

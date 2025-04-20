@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<!-- xmlns:xs="http://www.w3.org/2001/XMLSchema" is the url of the name space-->
+<!-- This is required to ensure elements like <xs:element>, <xs:complexType>, etc., are recognized as part of XSD-->
+    <!-- Racine -->
+    <xs:element name="etablissements">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="universite" type="UniversiteType" maxOccurs="unbounded"/>
+             <!-- by default minOccurs is 1 (atleast one subelement)-->
+             <!-- universiteType here is a user defined type (complex one as it composes of multiple subelements-->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- this is non reusable as the complex type is declared inside the element of name ="etablissmenets"-->
+
+    <!-- this complex type is reusable as it is defined globally in the xsd file -->
+    <xs:complexType name="UniversiteType">
+        <!-- xs:sequence specifies a strict order while xs:all specifies that it must contain atlease one of each in any order possible -->
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="annee_fondation" type="xs:gYear"/>
+            <xs:element name="faculte" type="FaculteType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Faculte -->
+    <!-- defining the format of faculte (reusable) -->
+    <xs:complexType name="FaculteType">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="doyen" type="xs:string"/>
+            <xs:element name="departement" type="DepartementType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Departement -->
+    <xs:complexType name="DepartementType">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="chef_departement" type="xs:string"/>
+            <xs:element name="enseignants" type="EnseignantsType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Liste d'enseignants -->
+    <xs:complexType name="EnseignantsType">
+        <xs:sequence>
+            <xs:element name="enseignant" type="EnseignantType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Enseignant -->
+    <xs:complexType name="EnseignantType">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="prenom" type="xs:string"/>
+            <xs:element name="date_naissance" type="xs:date"/>
+            <xs:element name="specialite" type="xs:string"/>
+            <xs:element name="enseignements" type="EnseignementsType"/>
+        </xs:sequence>
+        <!-- the use defines if the attribute if optional , required ... (by default optional)-->
+        <!-- attributes cannot be defined in a sequence-->
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="grade" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- Liste des enseignements -->
+    <!-- each element containing subelements must be defined as a complex type-->
+    <xs:complexType name="EnseignementsType">
+        <xs:sequence>
+            <xs:element name="matiere" type="MatiereType" maxOccurs="unbounded"/>
+            <!--unbounded here specifies that the teachings(matieres) that a prof can provide is not limited-->
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Matiere -->
+    <xs:complexType name="MatiereType">
+        <xs:sequence>
+            <xs:element name="titre" type="xs:string"/>
+            <xs:element name="credits" type="xs:integer"/>
+        </xs:sequence>
+        <xs:attribute name="code" type="xs:string" use="required"/>
+        <xs:attribute name="type" type="xs:string" use="required"/>
+    </xs:complexType>
+
+</xs:schema>

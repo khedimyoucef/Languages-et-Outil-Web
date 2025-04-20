@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!DOCTYPE PopulationStatistics [
+    <!ELEMENT PopulationStatistics (Countries)>
+    
+    <!ELEMENT Countries (Country+)>
+    
+    <!ELEMENT Country (Capital, Name?, NumberOfHabitants)>
+    <!-- the subelements must follow this sequence exactly-->
+    <!ATTLIST Country name CDATA #IMPLIED>
+    <!-- we can use implied for example to indicate that an attribute is optional-->
+    <!ELEMENT Name (#PCDATA)>
+    <!ELEMENT Capital (#PCDATA)>
+    
+    <!ELEMENT NumberOfHabitants (#PCDATA)>
+    <!-- we cannot specify special types like integers in DTD (we need XML shcemas)-->
+    <!ATTLIST NumberOfHabitants year CDATA #REQUIRED>
+
+    <!-- Important note : we use CDATA for attribute domains and #PCDATA for element values -->
+]>
+
+<PopulationStatistics>
+<Countries>
+<!-- all of the elements countries have the same sub elements ==> no ambiguity-->
+<!-- same name elements with different sub elements can be separated by an attributes -->
+<Country name ="Algeria">
+<!-- for example the name is a thing that doesn't change much ==> set as an attribute not an element-->
+<Capital>Algeirs</Capital>
+
+<NumberOfHabitants year="2023">46002849</NumberOfHabitants>
+
+
+
+</Country>
+<Country name="Tunisia" >
+
+<Capital>Tunis</Capital>
+
+<NumberOfHabitants year="2022">11803588</NumberOfHabitants>
+
+
+
+</Country>
+
+
+
+<Country >
+<Capital>Rabat</Capital>
+<Name>Morocco</Name>
+<NumberOfHabitants year="2021">36910558</NumberOfHabitants>
+
+
+</Country>
+</Countries>
+</PopulationStatistics>
