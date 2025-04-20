@@ -1,0 +1,214 @@
+<album numero="23" serie="Tintin">
+    <titre>Tintin et les Picaros</titre>
+    <date>
+      <mois>janvier</mois>
+      <annee>1976</annee>
+    </date>
+  </album>
+<album numero="24" serie="Tintin">
+    <titre>Tintin et l'Alph-Art</titre>
+    <date>
+      <mois>octobre</mois>
+      <annee>1986</annee>
+    </date>
+  </album>
+<album numero="17" serie="Astérix">
+    <titre>Le domaine des dieux</titre>
+    <date>
+      <mois>octobre</mois>
+      <annee>1971</annee>
+    </date>
+  </album>
+<album numero="18" serie="Astérix">
+    <titre>Les lauriers de César</titre>
+    <date>
+      <mois>janvier</mois>
+      <annee>1972</annee>
+    </date>
+  </album>
+<album numero="19" serie="Astérix">
+    <titre>Le devin</titre>
+    <date>
+      <mois>octobre</mois>
+      <annee>1972</annee>
+    </date>
+  </album>
+<album numero="20" serie="Astérix">
+    <titre>Astérix en Corse</titre>
+    <date>
+      <mois>avril</mois>
+      <annee>1973</annee>
+    </date>
+  </album>
+<album numero="21" serie="Astérix">
+    <titre>Le cadeau de César</titre>
+    <date>
+      <mois>juillet</mois>
+      <annee>1974</annee>
+    </date>
+  </album>
+<album numero="22" serie="Astérix">
+    <titre>La grande traversée</titre>
+    <date>
+      <mois>avril</mois>
+      <annee>1975</annee>
+    </date>
+  </album>
+<album numero="23" serie="Astérix">
+    <titre>Obélix et compagnie</titre>
+    <date>
+      <mois>avril</mois>
+      <annee>1976</annee>
+    </date>
+  </album>
+<album numero="24" serie="Astérix">
+    <titre>Astérix chez les Belges</titre>
+    <date>
+      <mois>janvier</mois>
+      <annee>1979</annee>
+    </date>
+  </album>
+<album numero="25" serie="Astérix">
+    <titre>Le Grand Fossé</titre>
+    <date>
+      <mois>avril</mois>
+      <annee>1980</annee>
+    </date>
+  </album>
+<album numero="26" serie="Astérix">
+    <titre>L'odyssée d'Astérix</titre>
+    <date>
+      <mois>octobre</mois>
+      <annee>1981</annee>
+    </date>
+  </album>
+<album numero="27" serie="Astérix">
+    <titre>Le fils d'Astérix</titre>
+    <date>
+      <mois>octobre</mois>
+      <annee>1983</annee>
+    </date>
+  </album>
+<album numero="28" serie="Astérix">
+    <titre>Astérix chez Rahàzade</titre>
+    <date>
+      <mois>octobre</mois>
+      <annee>1987</annee>
+    </date>
+  </album>
+<album numero="29" serie="Astérix">
+    <titre>La rose et le glaive</titre>
+    <date>
+      <mois>octobre</mois>
+      <annee>1991</annee>
+    </date>
+  </album>
+<album numero="30" serie="Astérix">
+    <titre>La galère d'Obélix</titre>
+    <date>
+      <mois>juillet</mois>
+      <annee>1996</annee>
+    </date>
+  </album>
+<album numero="31" serie="Astérix">
+    <titre>Astérix et Latraviata</titre>
+    <date>
+      <mois>mars</mois>
+      <annee>2001</annee>
+    </date>
+  </album>
+<album numero="33" serie="Astérix">
+    <titre>Le ciel lui tombe sur la tête</titre>
+    <auteur>Jean Dupont</auteur>
+    <date>
+      <mois>octobre</mois>
+      <annee>2005</annee>
+    </date>
+  </album>
+<album numero="34" serie="Astérix">
+    <titre>L'Anniversaire d'Astérix &amp; Obélix</titre>
+    <date>
+      <mois>octobre</mois>
+      <annee>2009</annee>
+    </date>
+  </album>
+<album numero="35" serie="Astérix">
+    <titre>Le Lotus bleu</titre>
+    <date>
+      <mois>octobre</mois>
+      <annee>2013</annee>
+    </date>
+  </album>
+<album numero="36" serie="Astérix">
+    <titre>Le papyrus de César</titre>
+    <date>
+      <mois>octobre</mois>
+      <annee>2015</annee>
+    </date>
+  </album>
+<album numero="4" serie="Pif et Hercule">
+    <titre>Pif et Hercule au pays des dinosaures</titre>
+    <auteur>Alice Moreau</auteur>
+    <date>
+      <mois>mars</mois>
+      <annee>1972</annee>
+    </date>
+  </album>
+<album numero="5" serie="Pif et Hercule">
+    <titre>Pif et Hercule et le mystère du château</titre>
+    <auteur>Michel Bernard</auteur>
+    <date>
+      <mois>octobre</mois>
+      <annee>1973</annee>
+    </date>
+  </album>
+<album numero="6" serie="Pif et Hercule">
+    <titre>Pif et Hercule à la recherche de l'artefact</titre>
+    <auteur>Émilie Durand</auteur>
+    <date>
+      <mois>février</mois>
+      <annee>1975</annee>
+    </date>
+  </album>
+<album numero="7" serie="Pif et Hercule">
+    <titre>Pif et Hercule et le dragon d'argent</titre>
+    <auteur>François Lefevre</auteur>
+    <auteur>Sophie Marceau</auteur>
+    <date>
+      <mois>juillet</mois>
+      <annee>1976</annee>
+    </date>
+  </album>
+<album numero="8" serie="Pif et Hercule">
+    <titre>Pif et Hercule à la conquête du cosmos</titre>
+    <auteur>Sophie Marceau</auteur>
+    <date>
+      <mois>janvier</mois>
+      <annee>1980</annee>
+    </date>
+  </album>
+<album numero="9" serie="Pif et Hercule">
+    <titre>Pif et Hercule et la cité magique</titre>
+    <auteur>Yves Petit</auteur>
+    <date>
+      <mois>septembre</mois>
+      <annee>1980</annee>
+    </date>
+  </album>
+<album numero="10" serie="Pif et Hercule">
+    <titre>Pif et Hercule et l'île aux trésors</titre>
+    <auteur>Isabelle Tremblay</auteur>
+    <auteur>Gérard Dubois</auteur>
+    <date>
+      <mois>avril</mois>
+      <annee>1982</annee>
+    </date>
+  </album>
+<album numero="11" serie="Pif et Hercule">
+    <titre>Pif et Hercule et la quête des éléments</titre>
+    <auteur>Gérard Dubois</auteur>
+    <date>
+      <mois>août</mois>
+      <annee>1984</annee>
+    </date>
+  </album>
